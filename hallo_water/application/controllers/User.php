@@ -9,6 +9,7 @@ class User extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_user');
+        $this->load->model('m_pelanggan');
         //Load Dependencies
 
     }
@@ -18,7 +19,7 @@ class User extends CI_Controller
     {
         $data = array(
             'title' => 'User',
-            'user' => $this->m_user->get_all_data(),
+            'user' => $this->m_pelanggan->get_all_data(),
             'isi' => 'v_user'
         );
 
@@ -29,36 +30,36 @@ class User extends CI_Controller
     public function add()
     {
         $data = array(
-            'nama_user' => $this->input->post('nama_user'),
-            'username' => $this->input->post('username'),
+            'nama_pelanggan' => $this->input->post('nama_pelanggan'),
+            'email' => $this->input->post('email'),
             'password' => $this->input->post('password'),
-            'level_user' => $this->input->post('level_user'),
+            'role_id' => $this->input->post('role_id'),
         );
-        $this->m_user->add($data);
+        $this->m_pelanggan->add($data);
         $this->session->set_flashdata('pesan','Data berhasil ditambahkan');
         redirect('user');
     }
 
     //Update one item
-    public function edit($id_user = NULL)
+    public function edit($id_pelanggan = NULL)
     {
         $data = array(
-            'id_user' => $id_user,
-            'nama_user' => $this->input->post('nama_user'),
-            'username' => $this->input->post('username'),
+            'id_pelanggan' => $id_pelanggan,
+            'nama_pelanggan' => $this->input->post('nama_pelanggan'),
+            'email' => $this->input->post('email'),
             'password' => $this->input->post('password'),
-            'level_user' => $this->input->post('level_user'),
+            'role_id' => $this->input->post('role_id'),
         );
-        $this->m_user->edit($data);
+        $this->m_pelanggan->edit($data);
         $this->session->set_flashdata('pesan','Data berhasil diedit');
         redirect('user');
     }
 
     //Delete one item
-    public function delete($id_user=NULL)
+    public function delete($id_pelanggan=NULL)
     {
-        $data = array('id_user' => $id_user);
-        $this->m_user->delete($data);
+        $data = array('id_pelanggan' => $id_pelanggan);
+        $this->m_pelanggan->delete($data);
         $this->session->set_flashdata('pesan','Data berhasil dihapus');
         redirect('user');
     }

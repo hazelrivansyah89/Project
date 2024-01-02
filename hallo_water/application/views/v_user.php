@@ -25,8 +25,6 @@
                     <tr>
                         <th>No</th>
                         <th>Nama User</th>
-                        <th>Username</th>
-                        <th>Password</th>
                         <th>Level</th>
                         <th>Action</th>
                     </tr>
@@ -36,11 +34,12 @@
                     foreach ($user as $key => $value) { ?>
                         <tr>
                             <td><?= $no++; ?></td>
-                            <td><?= $value->nama_user ?></td>
-                            <td><?= $value->username ?></td>
-                            <td><?= $value->password ?></td>
+                            <td><?= $value->nama_pelanggan ?></td>
+                            
+                            <!-- <td><?= $value->role_id ?></td>
+                            <td><?= $value->password ?></td> -->
                             <td><?php
-                                if ($value->level_user == 1) {
+                                if ($value->role_id == 1) {
                                     echo '<span class="badge bg-primary">Admin</span>';
                                 } else {
                                     echo '<span class="badge bg-success">User</span>';
@@ -48,8 +47,8 @@
                                 ?></td>
 
                             <td>
-                                <button data-toggle="modal" data-target="#edit<?= $value->id_user ?>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
-                                <button data-toggle="modal" data-target="#delete<?= $value->id_user ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                                <button data-toggle="modal" data-target="#edit<?= $value->id_pelanggan ?>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+                                <button data-toggle="modal" data-target="#delete<?= $value->id_pelanggan ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
                             </td>
                         </tr>
                     <?php } ?>
@@ -77,11 +76,10 @@
                 ?>
                 <div class="form-group">
                     <label>Nama User</label>
-                    <input name="nama_user" type="text" class="form-control" placeholder="Nama User" required>
-                </div>
-                <div class="form-group">
-                    <label>Username</label>
-                    <input name="username" type="text" class="form-control" placeholder="Username" required>
+                    <input name="nama_pelanggan" type="text" class="form-control" placeholder="Nama User" required>
+                </div><div class="form-group">
+                    <label>Email</label>
+                    <input name="email" type="email" class="form-control" placeholder="email" required>
                 </div>
                 <div class="form-group">
                     <label>Password</label>
@@ -89,7 +87,7 @@
                 </div>
                 <div class="form-group">
                     <label>Level</label>
-                    <select name="level_user" class="form-control">
+                    <select name="role_id" class="form-control">
                         <option value="1" selected>Admin</option>
                         <option value="2">User</option>
                     </select>
@@ -112,7 +110,7 @@
 
 <!-- modal edit -->
 <?php foreach ($user as $key => $value) { ?>
-    <div class="modal fade" id="edit<?= $value->id_user ?>">
+    <div class="modal fade" id="edit<?= $value->id_pelanggan ?>">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -123,15 +121,15 @@
                 </div>
                 <div class="modal-body">
                     <?php
-                    echo form_open('user/edit/' . $value->id_user);
+                    echo form_open('user/edit/' . $value->id_pelanggan);
                     ?>
                     <div class="form-group">
                         <label>Nama User</label>
-                        <input name="nama_user" value="<?= $value->nama_user ?>" type="text" class="form-control" placeholder="Nama User" required>
+                        <input name="nama_pelanggan" value="<?= $value->nama_pelanggan?>" type="text" class="form-control" placeholder="Nama User" required>
                     </div>
                     <div class="form-group">
-                        <label>Username</label>
-                        <input name="username" value="<?= $value->username ?>" type="text" class="form-control" placeholder="Username" required>
+                        <label>Email</label>
+                        <input name="email" value="<?= $value->email ?>" type="text" class="form-control" placeholder="Email" required>
                     </div>
                     <div class="form-group">
                         <label>Password</label>
@@ -139,11 +137,11 @@
                     </div>
                     <div class="form-group">
                         <label>Level</label>
-                        <select name="level_user" class="form-control">
-                            <option value="1" <?php if ($value->level_user == 1) {
+                        <select name="role_id" class="form-control">
+                            <option value="1" <?php if ($value->role_id == 1) {
                                                     echo 'selected';
                                                 } ?>>Admin</option>
-                            <option value="2" <?php if ($value->level_user == 2) {
+                            <option value="2" <?php if ($value->role_id == 2) {
                                                     echo 'selected';
                                                 } ?>>User</option>
                         </select>
@@ -168,21 +166,21 @@
 
 <!-- modal delete -->
 <?php foreach ($user as $key => $value) { ?>
-    <div class="modal fade" id="delete<?= $value->id_user ?>">
+    <div class="modal fade" id="delete<?= $value->id_pelanggan?>">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Delete <?= $value->nama_user ?></h4>
+                    <h4 class="modal-title">Delete <?= $value->nama_pelanggan ?></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <h5>Apakah anda ingin menghapus data bernama <?= $value->nama_user ?>?</h5>
+                    <h5>Apakah anda ingin menghapus data bernama <?= $value->nama_pelanggan ?>?</h5>
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <a href="<?= base_url('user/delete/' . $value->id_user) ?>" class="btn btn-primary">Delete</a>
+                    <a href="<?= base_url('user/delete/' . $value->id_pelanggan) ?>" class="btn btn-primary">Delete</a>
                 </div>
             </div>
             <!-- /.modal-content -->

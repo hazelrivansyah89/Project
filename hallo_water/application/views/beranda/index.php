@@ -46,7 +46,7 @@
     <section class="services">
         <div class="container">
 
-            <div class="row">
+            <div class="row justify-content-center">
 
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up"><a href="<?= base_url('home') ?>">
                         <div class="icon-box icon-box-pink">
@@ -61,23 +61,23 @@
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                 <div class="icon-box icon-box-cyan">
                     <div class="icon"><i class="bx bx-file"></i></div>
-                    <h4 class="title"><a href="">Consultation</a></h4>
+                    <h4 class="title"><a href="https://wa.me/6285213210821?text=Saya%20Ingin%20Melakukan%20Konsultasi%20Mengenai%20Air%20Besih">Consultation</a></h4>
                     <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <!-- <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
                 <div class="icon-box icon-box-green">
                     <div class="icon"><i class="bx bx-tachometer"></i></div>
                     <h4 class="title"><a href="">Magni Dolores</a></h4>
                     <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                 </div>
-            </div>
+            </div> -->
 
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
                 <div class="icon-box icon-box-blue">
-                    <div class="icon"><i class="bx bx-world"></i></div>
-                    <h4 class="title"><a href="">Nemo Enim</a></h4>
+                    <div class="icon"><i class="bx bx-world" ></i></div>
+                    <h4 class="title"><a href="">Artikel</a></h4>
                     <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
                 </div>
             </div>
@@ -93,8 +93,8 @@
 
             <div class="row">
                 <div class="col-lg-6 video-box">
-                    <img src="<?= base_url() ?>assets_beranda/img/why-us.jpg" class="img-fluid" alt="">
-                    <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+                    <img src="<?= base_url() ?>assets_beranda/img/h1.jpg" class="img-fluid" alt="">
+                    <a href="https://www.youtube.com/watch?v=VJpsTiL8M-M" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
                 </div>
 
                 <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
@@ -123,7 +123,7 @@
 
             <div class="section-title">
                 <h2>Artikel</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
             </div>
             <?php foreach ($artikel as $key => $value) {
 
@@ -140,10 +140,10 @@
                             <p class="fst-italic">
                                 <?= $value->teks_artikel ?>
                             </p>
-                            <ul>
+                            <!-- <ul>
                                 <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
                                 <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                            </ul>
+                            </ul> -->
                         </div>
                     </div>
                 <?php   } else { ?>
@@ -156,10 +156,10 @@
                             <p class="fst-italic">
                                 <?= $value->teks_artikel ?>
                             </p>
-                            <ul>
+                            <!-- <ul>
                                 <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
                                 <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                            </ul>
+                            </ul> -->
                         </div>
                     </div>
                 <?php  } ?>

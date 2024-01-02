@@ -110,6 +110,7 @@ class Pelanggan extends CI_Controller
 
         $this->load->view('layout/v_wraper_frontend', $data, FALSE);
     }
+    
 }
         
     /* End of file  pelanggan.php */

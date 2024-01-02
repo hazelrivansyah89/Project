@@ -15,13 +15,20 @@ class Pelanggan_login
         if ($cek) {
             $id_pelanggan = $cek->id_pelanggan;
             $nama_pelanggan = $cek->nama_pelanggan;
+            $role_id = $cek->role_id;
             $email = $cek->email;
             $foto = $cek->foto;
             //buat sesion
             $this->ci->session->set_userdata('email', $email); $this->ci->session->set_userdata('foto', $foto);
             $this->ci->session->set_userdata('nama_pelanggan', $nama_pelanggan);
-            $this->ci->session->set_userdata('id_pelanggan', $id_pelanggan);
-            redirect('home');
+            $this->ci->session->set_userdata('id_pelanggan', $id_pelanggan); 
+            $this->ci->session->set_userdata('role_id',$role_id);
+            if ($role_id == 2){
+                redirect('home');
+            }else{
+                redirect('admin');
+            }
+            
         } else {
             //jika salah
             $this->ci->session->set_flashdata('erorr', 'Email atau password salah');

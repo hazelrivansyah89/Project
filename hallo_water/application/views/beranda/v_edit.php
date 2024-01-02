@@ -21,7 +21,7 @@
                 <h5><i class="icon fas fa-info"></i>' . $error_upload . '</h5></div>';
                 # code...
             }
-            echo form_open_multipart('barang/edit/' . $barang->id_barang) ?>
+            echo form_open_multipart('artikel/edit/' . $artikel->id_artikel) ?>
             <div class="form-group">
                 <label>Nama Barang</label>
                 <input name="nama_barang" class="form-control" placeholder="Nama Barang" value="<?= $barang->nama_barang ?>">

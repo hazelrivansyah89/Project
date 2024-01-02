@@ -16,7 +16,7 @@
 <body>
     <section class="ftco-section">
         <!-- <div class="container"> -->
-<!-- weqweqe -->
+
             <div class="row justify-content-center">
                 <div class="col-md-12 col-lg-10">
                     <?php
@@ -47,7 +47,7 @@
 
                     echo form_open('pelanggan/register'); ?>
                     <div class="wrap d-md-flex" ">
-                        <div class="img" style="background-image: url(<?= base_url() ?>assets_login/images/bg-1.jpg);">
+                        <div class="img" style="background-image: url(<?= base_url() ?>assets_login/images/bg-2.jpg);">
                         </div>
                         <div class="login-wrap p-4 p-md-5">
                             <div class="d-flex">
@@ -73,24 +73,21 @@
                                     <input type="password" value="<?=set_value('ulangi_password')?>" name="ulangi_password" class="form-control" placeholder="Retype password">
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
+                                   <button type="submit" class="form-control rounded submit px-3" style="background-color: #87CEEB; color: #000000; border: 1px solid #87CEEB;">Registrasi</button>
                                 </div>
                                 <?php echo form_close(); ?>
+                                <p class="text-center">Sudah punya akun? <a href="<?= base_url('pelanggan/login') ?>" class="text-center" > Login </a></p>
 
 
                                 <div class="form-group d-md-flex">
                                     <div class="w-50 text-left">
-                                        <label class="checkbox-wrap checkbox-primary mb-0">Remember Me
-                                            <input type="checkbox" checked>
-                                            <span class="checkmark"></span>
-                                        </label>
+                    
                                     </div>
                                     <!-- <div class="w-50 text-md-right">
 										<a href="#">Forgot Password</a>
 									</div> -->
                                 </div>
                             </form>
-                            <p class="text-center">Belum punya akun? <a href="<?= base_url('pelanggan/register') ?>" class="text-center"> sign-up</a></p>
                         </div>
                     </div>
                 </div>

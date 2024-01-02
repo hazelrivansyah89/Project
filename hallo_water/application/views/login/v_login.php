@@ -48,12 +48,14 @@
 
 					echo form_open('pelanggan/login'); ?>
 					<div class="wrap d-md-flex">
-						<div class="img" style="background-image: url(<?= base_url() ?>assets_login/images/bg-1.jpg);">
+						<div class="img" style="background-image: url(<?= base_url() ?>assets_login/images/bg-2.jpg);">
 						</div>
 						<div class="login-wrap p-4 p-md-5">
 							<div class="d-flex">
 								<div class="w-100">
-									<h3 class="mb-4">Sign In</h3>
+								<h3 class="mb-4" style="text-align: center; color: #87CEEB;">Login</h3>
+
+
 								</div>
 								<!-- <div class="w-100">
 									<p class="social-media d-flex justify-content-end">
@@ -71,18 +73,18 @@
 									<label class="label" for="password">Password</label>
 									<input name="password" type="password" class="form-control" placeholder="Password" required>
 								</div>
-								<div class="form-group">
+								<!-- <div class="form-group">
 									<button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
-								</div>
+								</div> -->
+								<div class="form-group" >
+								<button type="submit" class="form-control rounded submit px-3" style="background-color: #87CEEB; color: #000000; border: 1px solid #87CEEB;">Sign In</button>
+
+								
 								<?php echo form_close(); ?>
 
 								
 								<div class="form-group d-md-flex">
-									<div class="w-50 text-left">
-										<label class="checkbox-wrap checkbox-primary mb-0">Remember Me
-											<input type="checkbox" checked>
-											<span class="checkmark"></span>
-										</label>
+									<div class="w-50 text-left">	
 									</div>
 									<!-- <div class="w-50 text-md-right">
 										<a href="#">Forgot Password</a>
